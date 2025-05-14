@@ -104,7 +104,7 @@ impl Circle {
 
 impl  Drawable for Point {
     fn draw(&self, img : &mut Image){
-        img.set_pixel(self.x, self.y, Point::color());
+        img.set_pixel(self.x, self.y, Color::rgb(255, 255, 255));
     }
 }
 impl Drawable for Line {
@@ -122,7 +122,7 @@ impl Drawable for Line {
         newx = newx.round();
         newy = newy.round();
         if newx >= 0.0 && newx < img.width.into() && newy >= 0.0 && newy < img.height.into() {
-             img.set_pixel(newx as i32, newy as i32, Point::color()).unwrap();
+             img.set_pixel(newx as i32, newy as i32, Color::rgb(255, 255, 255)).unwrap();
         }
     }
     
